@@ -1,0 +1,646 @@
+---
+// Ajay Vardhan - Personal Website
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ajay Vardhan" />
+  <title>Ajay Vardhan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #050505;
+      --text: #ffffff;
+      --muted: #666;
+      --accent: #c9a87c;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      cursor: crosshair;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* Cursor trail */
+    .cursor-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
+    }
+
+    .cursor-dot.clicking {
+      transform: translate(-50%, -50%) scale(3);
+      opacity: 0.5;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s;
+    }
+
+    .hero-photo:hover {
+      transform: scale(1.1) rotate(5deg);
+      filter: saturate(1.3);
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .hero-name {
+      font-size: clamp(4rem, 15vw, 12rem);
+      font-weight: 700;
+      line-height: 0.9;
+      text-align: center;
+      letter-spacing: -0.03em;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+
+    .hero-name span {
+      display: block;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .hero-name span:hover {
+      color: var(--accent);
+      transform: skewX(-5deg);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-sub {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease 1s forwards, bounce 2s ease-in-out 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    /* ===== STATEMENT ===== */
+    .statement {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+    }
+
+    .statement-text {
+      font-size: clamp(1.5rem, 5vw, 3.5rem);
+      max-width: 900px;
+      line-height: 1.4;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .statement-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .statement-text .highlight {
+      color: var(--accent);
+      position: relative;
+    }
+
+    .statement-text a {
+      color: var(--text);
+      text-decoration: none;
+      background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 100%;
+      background-size: 100% 2px;
+      transition: background-size 0.3s, color 0.3s;
+    }
+
+    .statement-text a:hover {
+      color: var(--accent);
+      background-size: 100% 100%;
+    }
+
+    /* ===== THINGS I MADE ===== */
+    .things {
+      padding: 8rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .things-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .things-label.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .things-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: #222;
+    }
+
+    @media (min-width: 768px) {
+      .things-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .thing {
+      background: var(--bg);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .thing.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .thing::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent), #ff6b6b);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .thing:hover::before {
+      opacity: 0.1;
+    }
+
+    .thing-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .thing-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .thing:hover .thing-name {
+      transform: translateX(10px);
+    }
+
+    .thing-vibe {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .thing-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: gap 0.3s ease;
+    }
+
+    .thing-link:hover {
+      gap: 1rem;
+    }
+
+    .thing-link::after {
+      content: '→';
+    }
+
+    .thing.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .thing.featured {
+        grid-template-columns: 1fr 1fr;
+        padding: 4rem;
+      }
+    }
+
+    .thing.featured .thing-name {
+      font-size: 2.5rem;
+    }
+
+    .thing-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== WRITING ===== */
+    .writing {
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .writing-bg {
+      position: absolute;
+      font-size: clamp(8rem, 30vw, 20rem);
+      font-weight: 700;
+      color: #111;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .writing-content {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .writing-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .writing-stat {
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .writing-label {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+
+    .writing-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .writing-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border: 1px solid #333;
+      transition: all 0.3s ease;
+    }
+
+    .writing-links a:hover {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    /* ===== BELIEFS ===== */
+    .beliefs {
+      padding: 8rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .belief {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      line-height: 1.6;
+      padding: 2rem 0;
+      border-bottom: 1px solid #222;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .belief.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .belief:last-child {
+      border-bottom: none;
+    }
+
+    .belief em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 8rem 2rem;
+      text-align: center;
+    }
+
+    .footer-cta {
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .footer-email {
+      font-size: 1.2rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-email a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-email a:hover {
+      color: var(--text);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* ===== EASTER EGG ===== */
+    .easter-egg {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      font-size: 0.7rem;
+      color: #222;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .easter-egg:hover {
+      color: var(--accent);
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-dot" id="cursor"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="/images/portrait.jpg" alt="Ajay" class="hero-photo" />
+    <h1 class="hero-name">
+      <span>Ajay</span>
+      <span>Vardhan</span>
+    </h1>
+    <p class="hero-sub">Chennai → Boston → Building things</p>
+    <p class="scroll-indicator">Scroll</p>
+  </header>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <p class="statement-text">
+      I build software at <a href="https://spendflo.com" target="_blank">Spendflo</a>.
+      I write about <span class="highlight">Tamil cinema</span> because I can't help it.
+      I make small, useless things on the internet for fun.
+    </p>
+  </section>
+
+  <!-- THINGS -->
+  <section class="things">
+    <p class="things-label">Things I made</p>
+
+    <div class="things-grid">
+      <div class="thing featured">
+        <div class="thing-inner">
+          <span class="thing-tag">Work</span>
+          <h3 class="thing-name">Spendflo</h3>
+          <p class="thing-vibe">SaaS spend management. I'm the CTO.</p>
+          <a href="https://spendflo.com" target="_blank" class="thing-link">spendflo.com</a>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="thing">
+        <div class="thing-inner">
+          <h3 class="thing-name">Suggest My Meal</h3>
+          <p class="thing-vibe">For when you can't decide what to eat.</p>
+          <a href="https://suggestmymeal.com" target="_blank" class="thing-link">Try it</a>
+        </div>
+      </div>
+
+      <div class="thing">
+        <div class="thing-inner">
+          <h3 class="thing-name">Read Out Loud</h3>
+          <p class="thing-vibe">Text-to-speech. Helps catch awkward writing.</p>
+          <a href="https://readoutloud.me" target="_blank" class="thing-link">Try it</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="writing">
+    <div class="writing-bg">WORDS</div>
+    <div class="writing-content">
+      <p class="writing-label">Creative outlets</p>
+      <div class="writing-links">
+        <a href="https://mokkapadam.com" target="_blank">Tamil Cinema →</a>
+        <a href="https://sirblabsalot.wordpress.com" target="_blank">Everything Else →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="beliefs">
+    <p class="belief">From <em>Chennai</em>. Based in <em>Boston</em>.</p>
+    <p class="belief">I like building things and writing about things.</p>
+    <p class="belief">That's mostly it.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-cta">Say hi?</p>
+    <p class="footer-email"><a href="mailto:ajyvardan@gmail.com">ajyvardan@gmail.com</a></p>
+    <nav class="footer-links">
+      <a href="https://linkedin.com/in/ajayvardhanb" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ajayvardhan" target="_blank">GitHub</a>
+      <a href="https://twitter.com/ajayvardhan" target="_blank">Twitter</a>
+    </nav>
+  </footer>
+
+  <span class="easter-egg" id="egg">●</span>
+
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    document.addEventListener('mousedown', () => cursor.classList.add('clicking'));
+    document.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
+
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Scroll reveal
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.statement-text, .things-label, .thing, .writing-content, .belief').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Easter egg
+    let eggClicks = 0;
+    const egg = document.getElementById('egg');
+    const colors = ['#c9a87c', '#ff6b6b', '#4ecdc4', '#ffe66d', '#95e1d3'];
+
+    egg.addEventListener('click', () => {
+      eggClicks++;
+      document.documentElement.style.setProperty('--accent', colors[eggClicks % colors.length]);
+
+      if (eggClicks === 10) {
+        document.body.style.animation = 'spin 0.5s ease';
+        setTimeout(() => document.body.style.animation = '', 500);
+      }
+    });
+
+    // Parallax on hero
+    const heroPhoto = document.querySelector('.hero-photo');
+    const heroName = document.querySelector('.hero-name');
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (scrolled < window.innerHeight) {
+        heroPhoto.style.transform = `translateY(${scrolled * 0.3}px)`;
+        heroName.style.transform = `translateY(${scrolled * 0.1}px)`;
+      }
+    });
+  </script>
+</body>
+</html>

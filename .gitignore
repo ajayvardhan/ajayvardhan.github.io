@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Astro cache
+.astro/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Old root-level build artifacts (now deployed via GitHub Actions)
+/index.html
+/assets/
+/fonts/
+/images/portrait.jpg
