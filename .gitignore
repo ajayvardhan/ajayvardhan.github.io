@@ -22,8 +22,11 @@ Thumbs.db
 *.swp
 *.swo
 
-# Old root-level build artifacts (now deployed via GitHub Actions)
+# Claude Code
+.claude/
+
+# Old root-level build artifacts
 /index.html
 /assets/
 /fonts/
-/images/portrait.jpg
+/images/
