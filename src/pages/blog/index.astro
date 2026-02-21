@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Group posts by year
+const postsByYear = posts.reduce((acc, post) => {
+  const year = post.data.pubDate.getFullYear();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {} as Record<number, typeof posts>);
+
+const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
+
+function getExcerpt(body: string, maxLength = 120): string {
+  const plain = body
+    .replace(/^---[\s\S]*?---\n*/m, '') // frontmatter
+    .replace(/^#+\s+.*/gm, '')          // headings
+    .replace(/^>\s?/gm, '')             // blockquotes
+    .replace(/!\[.*?\]\(.*?\)/g, '')     // images
+    .replace(/\[([^\]]+)\]\(.*?\)/g, '$1') // links -> text
+    .replace(/[*_~`]/g, '')             // emphasis markers
+    .replace(/\n+/g, ' ')              // newlines to spaces
+    .trim();
+  if (plain.length <= maxLength) return plain;
+  return plain.slice(0, maxLength).replace(/\s+\S*$/, '') + '...';
+}
+---
+
+<BaseLayout
+  title="Blog | Ajay Vardhan"
+  description="Blog by Ajay Vardhan. Writing since 2011."
+>
+  <Fragment slot="head">
+    <style>
+      .blog-header {
+        padding: 6rem 0 3rem;
+      }
+
+      .blog-header h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+      }
+
+      .blog-header p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        max-width: 480px;
+      }
+
+      /* ===== SEARCH ===== */
+      .search-wrap {
+        padding: 1.5rem 0 0.5rem;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .search-input {
+        width: 100%;
+        background: transparent;
+        border: 1px solid var(--rule);
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        padding: 0.6rem 0.85rem;
+        border-radius: 2px;
+        outline: none;
+        transition: border-color 0.2s ease;
+      }
+
+      .search-input::placeholder {
+        color: var(--muted);
+        opacity: 0.6;
+      }
+
+      .search-input:focus {
+        border-color: #333;
+      }
+
+      /* ===== YEAR GROUPS ===== */
+      .year-group {
+        padding: 2.5rem 0 0;
+      }
+
+      .year-label {
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+        opacity: 0.3;
+      }
+
+      .post-list {
+        list-style: none;
+      }
+
+      .post-item {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid var(--rule);
+        transition: opacity 0.3s ease;
+      }
+
+      .post-item.hidden {
+        display: none;
+      }
+
+      .post-top {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.3rem;
+      }
+
+      .post-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .post-title a {
+        color: var(--text);
+        transition: color 0.2s ease;
+      }
+
+      .post-title a:hover {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .post-date {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        margin-left: auto;
+      }
+
+      .post-excerpt {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.5;
+        margin-top: 0.25rem;
+      }
+
+      /* ===== STATS ===== */
+      .blog-stats {
+        padding: 2rem 0 4rem;
+        border-top: 1px solid var(--rule);
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        display: flex;
+        gap: 2rem;
+      }
+
+      .stat-value {
+        color: var(--text);
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 600px) {
+        .blog-header {
+          padding: 4rem 0 2rem;
+        }
+
+        .post-top {
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+
+        .blog-stats {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+      }
+    </style>
+  </Fragment>
+
+  <div class="content">
+    <div class="blog-header">
+      <h1>Blog</h1>
+      <p>Writing since 2011.</p>
+    </div>
+
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="search" placeholder="Search posts..." autocomplete="off" />
+    </div>
+
+    {years.map((year) => (
+      <div class="year-group" data-year={year}>
+        <div class="year-label">{year}</div>
+        <ul class="post-list">
+          {postsByYear[year].map((post) => (
+            <li class="post-item" data-title={post.data.title.toLowerCase()}>
+              <div class="post-top">
+                <span class="post-title">
+                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                </span>
+                <time class="post-date" datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                </time>
+              </div>
+              <p class="post-excerpt">{getExcerpt(post.body)}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <div class="blog-stats">
+      <span><span class="stat-value">{posts.length}</span> posts</span>
+      <span><span class="stat-value">{years[years.length - 1]}</span>&ndash;<span class="stat-value">{years[0]}</span></span>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('search') as HTMLInputElement;
+    const items = document.querySelectorAll('.post-item');
+    const yearGroups = document.querySelectorAll('.year-group');
+
+    searchInput?.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+
+      items.forEach(item => {
+        const title = item.getAttribute('data-title') || '';
+        if (!query || title.includes(query)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Hide year groups that have no visible posts
+      yearGroups.forEach(group => {
+        const visiblePosts = group.querySelectorAll('.post-item:not(.hidden)');
+        (group as HTMLElement).style.display = visiblePosts.length === 0 ? 'none' : '';
+      });
+    });
+  </script>
+</BaseLayout>

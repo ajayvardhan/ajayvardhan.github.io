@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+const lang = post.data.lang || 'en';
+
+// Generate meta description from actual post content
+function getMetaDescription(body: string, maxLength = 155): string {
+  const plain = body
+    .replace(/^---[\s\S]*?---\n*/m, '')
+    .replace(/^#+\s+.*/gm, '')
+    .replace(/^>\s?/gm, '')
+    .replace(/!\[.*?\]\(.*?\)/g, '')
+    .replace(/\[([^\]]+)\]\(.*?\)/g, '$1')
+    .replace(/[*_~`]/g, '')
+    .replace(/\n+/g, ' ')
+    .trim();
+  if (plain.length <= maxLength) return plain;
+  return plain.slice(0, maxLength).replace(/\s+\S*$/, '') + '...';
+}
+
+const metaDescription = getMetaDescription(post.body);
+
+// Get prev/next posts
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const currentIndex = allPosts.findIndex(p => p.slug === post.slug);
+const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+---
+
+<BaseLayout
+  title={`${post.data.title} | Ajay Vardhan`}
+  description={metaDescription}
+  ogType="article"
+>
+  <Fragment slot="head">
+    <style>
+      .post-header {
+        padding: 6rem 0 2rem;
+      }
+
+      .post-header h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+
+      .post-meta {
+        font-size: 0.85rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .prose {
+        padding: 2.5rem 0 4rem;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: var(--text);
+      }
+
+      .prose :global(p) {
+        margin-bottom: 1.75rem;
+      }
+
+      .prose :global(h2) {
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin: 2.5rem 0 1rem;
+      }
+
+      .prose :global(h3) {
+        font-family: var(--font-body);
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 2rem 0 0.75rem;
+      }
+
+      .prose :global(ul), .prose :global(ol) {
+        margin-bottom: 1.75rem;
+        padding-left: 1.5rem;
+      }
+
+      .prose :global(li) {
+        margin-bottom: 0.5rem;
+      }
+
+      .prose :global(blockquote) {
+        border-left: 2px solid var(--accent);
+        padding-left: 1.25rem;
+        margin: 2rem 0;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .prose :global(img) {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 1.5rem 0;
+      }
+
+      .prose :global(strong) {
+        font-weight: 700;
+      }
+
+      .prose :global(em) {
+        font-style: italic;
+      }
+
+      .prose :global(hr) {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 2.5rem 0;
+      }
+
+      /* Tamil text */
+      .prose[lang="ta"] {
+        font-size: 1.2rem;
+        line-height: 2;
+      }
+
+      /* ===== POST NAV ===== */
+      .post-nav {
+        border-top: 1px solid var(--rule);
+        padding: 2rem 0 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .post-nav-link {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .post-nav-link.next {
+        text-align: right;
+        grid-column: 2;
+      }
+
+      .post-nav-direction {
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .post-nav-title {
+        font-size: 0.95rem;
+        color: var(--text);
+        transition: color 0.2s ease;
+      }
+
+      .post-nav-title:hover {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        .post-nav {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .post-nav-link.next {
+          text-align: left;
+          grid-column: 1;
+        }
+      }
+    </style>
+  </Fragment>
+
+  <div class="content">
+    <div class="post-header">
+      <h1>{post.data.title}</h1>
+      <p class="post-meta">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+      </p>
+    </div>
+
+    <article class="prose" lang={lang}>
+      <Content />
+    </article>
+
+    <nav class="post-nav">
+      {nextPost && (
+        <div class="post-nav-link prev">
+          <span class="post-nav-direction">&larr; Older</span>
+          <a href={`/blog/${nextPost.slug}`} class="post-nav-title">{nextPost.data.title}</a>
+        </div>
+      )}
+      {prevPost && (
+        <div class="post-nav-link next">
+          <span class="post-nav-direction">Newer &rarr;</span>
+          <a href={`/blog/${prevPost.slug}`} class="post-nav-title">{prevPost.data.title}</a>
+        </div>
+      )}
+    </nav>
+  </div>
+</BaseLayout>

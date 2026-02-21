@@ -1,385 +1,384 @@
 ---
-// Ajay Vardhan - ajayvardhan.com
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const latestPost = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())[0];
 ---
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ajay Vardhan | Founder, Writer, Creator</title>
-  <meta name="description" content="Ajay Vardhan. Founder at Spendflo. Builder, writer, creator." />
-  <link rel="canonical" href="https://ajayvardhan.com" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ajay Vardhan | Founder, Writer, Creator" />
-  <meta property="og:description" content="Founder at Spendflo. Builder, writer, creator." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ajayvardhan.com" />
-  <meta property="og:image" content="https://ajayvardhan.com/images/headshot.jpg" />
-  <meta property="og:image:alt" content="Ajay Vardhan" />
-  <meta property="og:site_name" content="Ajay Vardhan" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@_ajayv" />
-  <meta name="twitter:creator" content="@_ajayv" />
-  <meta name="twitter:title" content="Ajay Vardhan | Founder, Writer, Creator" />
-  <meta name="twitter:description" content="Founder at Spendflo. Builder, writer, creator." />
-  <meta name="twitter:image" content="https://ajayvardhan.com/images/headshot.jpg" />
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ajay Vardhan",
-    "url": "https://ajayvardhan.com",
-    "image": "https://ajayvardhan.com/images/headshot.jpg",
-    "jobTitle": "Co-founder",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Spendflo",
-      "url": "https://spendflo.com"
-    },
-    "sameAs": [
-      "https://linkedin.com/in/ajayvardhanb",
-      "https://github.com/ajayvardhan",
-      "https://x.com/_ajayv",
-      "https://mokkapadam.com",
-      "https://sirblabsalot.wordpress.com"
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg: #0a0a0a;
-      --text: #e8e0d4;
-      --muted: #777;
-      --accent: #c9a87c;
-      --rule: #161616;
-      --font-serif: 'Instrument Serif', Georgia, serif;
-      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+<BaseLayout
+  title="Ajay Vardhan | Founder, Writer, Creator"
+  description="Ajay Vardhan. Co-founder and CTO at Spendflo. Writer. Creator."
+  canonicalUrl="https://ajayvardhan.com"
+  hideNavOnHero={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ajay Vardhan",
+      "url": "https://ajayvardhan.com",
+      "image": "https://ajayvardhan.com/images/headshot.jpg",
+      "jobTitle": "Co-founder & CTO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Spendflo",
+        "url": "https://spendflo.com"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/ajayvardhanb",
+        "https://github.com/ajayvardhan",
+        "https://x.com/_ajayv",
+        "https://mokkapadam.com"
+      ]
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 1.1rem;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    ::selection {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
-    }
-
-    /* ===== ENTRANCE ===== */
-    @keyframes enter {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .portrait {
-      width: 172px;
-      height: 172px;
-      border-radius: 50%;
-      object-fit: cover;
-      filter: grayscale(1) sepia(0.15) brightness(0.95);
-      box-shadow: 0 0 40px rgba(201, 168, 124, 0.08);
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: enter 0.8s ease 0.1s forwards;
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .portrait:hover {
-      transform: scale(1.05);
-    }
-
-    .name {
-      font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 9vw, 5.5rem);
-      line-height: 1;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: enter 0.8s ease 0.25s forwards;
-    }
-
-    .manifesto {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      opacity: 0;
-      animation: enter 0.8s ease 0.5s forwards;
-    }
-
-    /* ===== LAYOUT ===== */
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .divider {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 0;
-    }
-
-    /* ===== SECTIONS ===== */
-    .row {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 2rem;
-      padding: 4rem 0;
-    }
-
-    .row-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-top: 0.35rem;
-    }
-
-    .row-body p {
-      margin-bottom: 1.25rem;
-    }
-
-    .row-body p:last-child:not(.desc) {
-      margin-bottom: 0;
-    }
-
-    /* ===== LINK ITEMS ===== */
-    .link-items {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .link-item a {
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .link-item a::after {
-      content: '\2197';
-      font-size: 0.75em;
-      opacity: 0.4;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .link-item a:hover {
-      text-decoration: none;
-    }
-
-    .link-item a:hover::after {
-      opacity: 1;
-      transform: translate(2px, -2px);
-    }
-
-    .link-item .desc {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-      margin-bottom: 0;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer-email {
-      margin-bottom: 1rem;
-    }
-
-    .footer-nav {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-nav a {
-      color: var(--muted);
-      font-size: 0.85rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-nav a:hover {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .dot {
-      color: #333;
-      font-size: 0.6rem;
-      user-select: none;
-    }
-
-    /* ===== EASTER EGG ===== */
-    .egg {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      font-size: 0.5rem;
-      color: #1a1a1a;
-      cursor: pointer;
-      transition: color 0.3s;
-      user-select: none;
-    }
-
-    .egg:hover { color: var(--accent); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 600px) {
-      .row {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        padding: 3rem 0;
+    </script>
+    <style>
+      /* ===== ENTRANCE ===== */
+      @keyframes enter {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-      .row-label { padding-top: 0; }
-      .link-items { margin-top: 1.25rem; }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .portrait, .name, .manifesto {
+      /* ===== HERO ===== */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 4rem 2rem;
+      }
+
+      .portrait {
+        width: 172px;
+        height: 172px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(1) sepia(0.15) brightness(0.95);
+        box-shadow: 0 0 40px rgba(201, 168, 124, 0.08);
+        margin-bottom: 2.5rem;
+        opacity: 0;
+        animation: enter 0.8s ease 0.1s forwards;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .portrait:hover {
+        transform: scale(1.05);
+      }
+
+      .name {
+        font-family: var(--font-serif);
+        font-size: clamp(2.2rem, 9vw, 5.5rem);
+        line-height: 1;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: enter 0.8s ease 0.25s forwards;
+      }
+
+      .manifesto {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        opacity: 0;
+        animation: enter 0.8s ease 0.5s forwards;
+      }
+
+      .manifesto a {
+        color: var(--muted);
+        transition: color 0.2s ease;
+      }
+
+      .manifesto a:hover {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: enter 0.8s ease 0.8s forwards;
+      }
+
+      .scroll-hint svg {
+        width: 20px;
+        height: 20px;
+        color: var(--muted);
+        opacity: 0.4;
+        animation: bounce 2s ease-in-out 1.5s infinite;
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(6px); }
+      }
+
+      /* ===== SECTIONS ===== */
+      .section {
+        padding: 4rem 0;
+        scroll-margin-top: 4rem;
+      }
+
+      .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      /* ===== FOUNDER (full-width, prominent) ===== */
+      .founder-body {
+        font-size: 1.15rem;
+        line-height: 1.85;
+      }
+
+      .founder-body p {
+        margin-bottom: 1.25rem;
+      }
+
+      .founder-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ===== WRITER (cards) ===== */
+      .writer-intro {
+        margin-bottom: 1.75rem;
+      }
+
+      .writer-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      a.card {
+        color: inherit;
+        text-decoration: none;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        padding: 1.5rem;
+        transition: border-color 0.2s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a.card:hover {
+        text-decoration: none;
+        border-color: #333;
+      }
+
+      .card-title {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .card-title::after {
+        content: '\2197';
+        font-size: 0.75em;
+        opacity: 0.4;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .card:hover .card-title::after {
         opacity: 1;
-        animation: none;
+        transform: translate(2px, -2px);
       }
-    }
-  </style>
-</head>
-<body>
+
+      .card-title a {
+        color: var(--accent);
+      }
+
+      .card-title a:hover {
+        text-decoration: none;
+      }
+
+      .card-desc {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.5;
+        flex: 1;
+      }
+
+      .card-latest {
+        margin-top: 1rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--rule);
+        font-size: 0.8rem;
+      }
+
+      .card-latest-label {
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.65rem;
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .card-latest a {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .card-latest a:hover {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      /* ===== CREATOR (project cards) ===== */
+      .creator-intro {
+        margin-bottom: 1.75rem;
+      }
+
+      .creator-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      /* ===== CONTACT ===== */
+      .contact-email {
+        margin-bottom: 1rem;
+      }
+
+      .contact-links {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-links a {
+        color: var(--muted);
+        font-size: 0.85rem;
+        transition: color 0.2s ease;
+      }
+
+      .contact-links a:hover {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .contact-dot {
+        color: #333;
+        font-size: 0.6rem;
+        user-select: none;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 600px) {
+        .writer-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .creator-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .portrait, .name, .manifesto, .scroll-hint {
+          opacity: 1;
+          animation: none;
+        }
+        .scroll-hint svg {
+          animation: none;
+        }
+      }
+    </style>
+  </Fragment>
 
   <header class="hero">
     <img src="/images/headshot.jpg" alt="Ajay Vardhan" class="portrait" />
     <h1 class="name">Ajay Vardhan</h1>
-    <p class="manifesto">Founder. Writer. Creator.</p>
+    <p class="manifesto"><a href="#founder">Founder</a>. <a href="#writer">Writer</a>. <a href="#creator">Creator</a>.</p>
+    <div class="scroll-hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </div>
   </header>
 
   <div class="content">
     <hr class="divider" />
 
-    <section class="row">
-      <span class="row-label">Founder</span>
-      <div class="row-body">
-        <p>I co-founded <a href="https://spendflo.com" target="_blank" rel="noopener">Spendflo</a>, where I lead engineering. It's an AI-native procurement platform.</p>
-        <p>Before that, I was the founding engineer at two startups in Boston - one was acquired. I went to the US for a master's in computer science, stayed to build things from zero, and came back to Chennai to start my own.</p>
+    <section class="section" id="founder">
+      <div class="section-label">Founder</div>
+      <div class="founder-body">
+        <p>I'm the CTO at <a href="https://spendflo.com" target="_blank" rel="noopener">Spendflo</a>, an AI-native procurement platform.</p>
+        <p>Before that, I went to the US for Master's in Computer Science, was the founding engineer at two startups in Boston, one was acquired, came back to Chennai to start my own.</p>
       </div>
     </section>
 
     <hr class="divider" />
 
-    <section class="row">
-      <span class="row-label">Writer</span>
-      <div class="row-body">
-        <p>I like writing. It's how I think through things. Cinema is one outlet. Life is the other.</p>
-        <div class="link-items">
-          <div class="link-item">
-            <a href="https://mokkapadam.com" target="_blank" rel="noopener">Mokkapadam</a>
-            <p class="desc">Tamil cinema essays and reviews.</p>
-          </div>
-          <div class="link-item">
-            <a href="https://sirblabsalot.wordpress.com" target="_blank" rel="noopener">sirblabsalot</a>
-            <p class="desc">An old-school blog about life, friendships, struggles, and whatever else is on my mind. Still going.</p>
-          </div>
-        </div>
+    <section class="section" id="writer">
+      <div class="section-label">Writer</div>
+      <p class="writer-intro">I've been writing since I can remember about two of my favourite topics - Cinema and Life</p>
+      <div class="writer-cards">
+        <a href="https://mokkapadam.com" target="_blank" rel="noopener" class="card">
+          <span class="card-title">Mokkapadam</span>
+          <span class="card-desc">Essays about Tamil Cinema</span>
+        </a>
+        <a href="/blog" class="card">
+          <span class="card-title">Blog</span>
+          <span class="card-desc">An old-school blog about whatever is on my mind.</span>
+          <span class="card-latest">
+            <span class="card-latest-label">Latest</span>
+            <span>{latestPost.data.title}</span>
+          </span>
+        </a>
       </div>
     </section>
 
     <hr class="divider" />
 
-    <section class="row">
-      <span class="row-label">Creator</span>
-      <div class="row-body">
-        <p>Small things I make to scratch an itch.</p>
-        <div class="link-items">
-          <div class="link-item">
-            <a href="https://www.instagram.com/ajay_vardhan/" target="_blank" rel="noopener">Cooking</a>
-            <p class="desc">I cook. Sometimes I film it.</p>
-          </div>
-          <div class="link-item">
-            <a href="https://suggestmymeal.com" target="_blank" rel="noopener">Suggest My Meal</a>
-            <p class="desc">For when you can't decide what to eat.</p>
-          </div>
-          <div class="link-item">
-            <a href="https://readoutloud.me" target="_blank" rel="noopener">Read Out Loud</a>
-            <p class="desc">Listen to any article, text, or PDF read aloud to you.</p>
-          </div>
-        </div>
+    <section class="section" id="creator">
+      <div class="section-label">Creator</div>
+      <p class="creator-intro">Things I've built on the side.</p>
+      <div class="creator-cards">
+        <a href="https://www.instagram.com/ajay_vardhan/" target="_blank" rel="noopener" class="card">
+          <span class="card-title">Cooking</span>
+          <span class="card-desc">I cook. Sometimes I film it.</span>
+        </a>
+        <a href="https://suggestmymeal.com" target="_blank" rel="noopener" class="card">
+          <span class="card-title">Suggest My Meal</span>
+          <span class="card-desc">For when you can't decide what to eat.</span>
+        </a>
+        <a href="https://readoutloud.me" target="_blank" rel="noopener" class="card">
+          <span class="card-title">Read Out Loud</span>
+          <span class="card-desc">For when I'd rather listen than read.</span>
+        </a>
       </div>
     </section>
 
     <hr class="divider" />
 
-    <footer class="row">
-      <span class="row-label">Say hi</span>
-      <div class="row-body">
-        <p class="footer-email"><a href="mailto:ajyvardan@gmail.com">ajyvardan@gmail.com</a></p>
-        <nav class="footer-nav">
-          <a href="https://linkedin.com/in/ajayvardhanb" target="_blank" rel="noopener">LinkedIn</a>
-          <span class="dot">&middot;</span>
-          <a href="https://github.com/ajayvardhan" target="_blank" rel="noopener">GitHub</a>
-          <span class="dot">&middot;</span>
-          <a href="https://x.com/_ajayv" target="_blank" rel="noopener">Twitter</a>
-        </nav>
-      </div>
+    <footer class="section" id="contact">
+      <div class="section-label">Say hi</div>
+      <p class="contact-email"><a href="mailto:ajyvardan@gmail.com">ajyvardan@gmail.com</a></p>
+      <nav class="contact-links">
+        <a href="https://linkedin.com/in/ajayvardhanb" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="contact-dot">&middot;</span>
+        <a href="https://github.com/ajayvardhan" target="_blank" rel="noopener">GitHub</a>
+        <span class="contact-dot">&middot;</span>
+        <a href="https://x.com/_ajayv" target="_blank" rel="noopener">Twitter</a>
+      </nav>
     </footer>
   </div>
-
-  <span class="egg" id="egg">&#9679;</span>
-
-  <script>
-    let clicks = 0;
-    const egg = document.getElementById('egg');
-    const colors = ['#c9a87c', '#ff6b6b', '#4ecdc4', '#ffe66d', '#95e1d3'];
-    egg.addEventListener('click', () => {
-      clicks++;
-      document.documentElement.style.setProperty('--accent', colors[clicks % colors.length]);
-    });
-  </script>
-</body>
-</html>
+</BaseLayout>

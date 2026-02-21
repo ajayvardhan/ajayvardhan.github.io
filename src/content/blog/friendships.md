@@ -1,0 +1,17 @@
+---
+title: "Friendships"
+description: "On how friendships change as we grow up, the feeling of being an outsider, and the struggle to connect."
+pubDate: 2017-10-27
+category: general
+lang: en
+---
+
+Ever been in a situation when you are talking with a bunch of people and you have a relevant story to contribute to the topic but you decided not to because you think it is rude to interrupt? When you want to ask for help to someone who is really good at that thing but you ended up doing it yourself? When you want to share something to someone but couldn't do it with the thought of burdening them with your stuff overshadowing your need to share? Not hanging out with someone because you feel they don't want to spend time with you? I didn't used to have these thoughts before. None of these things mattered before. Friendships were easy. Nobody used to bother if I spoke a random inappropriate thing out of context. Many wouldn't bother even now but the thought of what if they did keeps haunting me every time. I'm not sure if this is overthinking or just growing up.
+
+The constant feeling of being an outsider is something I developed myself for no reason at all and something I couldn't get rid of even after trying so hard. The feeling of people would rather not have me in their lives. Given a chance, they would rather be with someone else than me. The feeling of forcing my existence in other people's lives. The feeling of not belonging anywhere at any time. I know I sound like the annoying and whiny Jaden Smith pretending to be deep but even Jaden makes sense at times.
+
+The need to have insider jokes and common memories to make friendships non-awkward is something only grown-ups deal with. I used to make friends with people just for sharing snacks in my college hostel. There was no need to analyse the person before becoming close with them. Their opinions didn't matter. Their personality didn't matter. Only friendship did and dealing with the compatibility came later. As time passed, everything mattered before considering someone as a friend. Our definition of friendships changed altogether.
+
+I know this mild feeling of borderline personality is prevalent with many people of my age. I've spoken about this with some but all seem to be as clueless as I am. There is no reason for this feeling but we have it. Even when people care about me, the feeling of nobody cares keeps crawling back and occupying all over my body and pulls me back from doing anything a normal person with normal friends would do. Does all this boil down to our need for acceptance or need to find solace in self? I have no idea.
+
+I've read a lot of things that people wrote about how it is difficult to make friends as we grow up. Many give reasons and scientific facts but very few talk about solutions. Maybe it is because we all know the solution already but just aren't ready to follow it because the problem itself is stopping us from it. Figuring out life never leads to fruitful results. As the cliche goes, I'll blame this also on me becoming a grown-up. Or have I?

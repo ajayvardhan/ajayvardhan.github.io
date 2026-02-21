@@ -1,0 +1,311 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: string;
+  hideNavOnHero?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.url.href,
+  ogImage = 'https://ajayvardhan.com/images/headshot.jpg',
+  ogType = 'website',
+  hideNavOnHero = false,
+} = Astro.props;
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content="Ajay Vardhan" />
+  <meta property="og:site_name" content="Ajay Vardhan" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@_ajayv" />
+  <meta name="twitter:creator" content="@_ajayv" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <slot name="head" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style is:global>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --text: #e8e0d4;
+      --muted: #777;
+      --accent: #c9a87c;
+      --rule: #161616;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    /* ===== LAYOUT ===== */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+
+    /* ===== NAV ===== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      padding: 0 2rem;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .site-nav.visible {
+      transform: translateY(0);
+      border-bottom-color: var(--rule);
+    }
+
+    .site-nav-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 3rem;
+    }
+
+    .site-nav-name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .site-nav-name:hover {
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    .site-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .site-nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-nav-links a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0.25rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-toggle:hover {
+      color: var(--text);
+    }
+
+    .nav-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ===== EASTER EGG ===== */
+    .egg {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      font-size: 0.5rem;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: color 0.3s;
+      user-select: none;
+    }
+
+    .egg:hover { color: var(--accent); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .site-nav-links {
+        display: none;
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--rule);
+        padding: 1rem 2rem;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .site-nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" id="site-nav" data-hide-on-hero={hideNavOnHero ? 'true' : 'false'}>
+    <div class="site-nav-inner">
+      <a href="/" class="site-nav-name">Ajay Vardhan</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <div class="site-nav-links" id="nav-links">
+        <a href="/#founder">Founder</a>
+        <a href="/#writer">Writer</a>
+        <a href="/#creator">Creator</a>
+        <a href="/#contact">Say hi</a>
+      </div>
+    </div>
+  </nav>
+
+  <slot />
+
+  <span class="egg" id="egg">&#9679;</span>
+
+  <script>
+    // Nav visibility
+    const nav = document.getElementById('site-nav');
+    const hideOnHero = nav?.getAttribute('data-hide-on-hero') === 'true';
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (hideOnHero) {
+      // Show nav after scrolling past the hero (100vh)
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          nav?.classList.toggle('visible', !entry.isIntersecting);
+        },
+        { threshold: 0, rootMargin: '0px' }
+      );
+      // Observe a sentinel at top of page
+      const sentinel = document.createElement('div');
+      sentinel.style.position = 'absolute';
+      sentinel.style.top = '80vh';
+      sentinel.style.height = '1px';
+      sentinel.style.width = '1px';
+      document.body.prepend(sentinel);
+      observer.observe(sentinel);
+    } else {
+      // On non-homepage pages, always show nav
+      nav?.classList.add('visible');
+    }
+
+    // Hamburger toggle
+    navToggle?.addEventListener('click', () => {
+      navLinks?.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navLinks?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks?.classList.remove('open');
+      });
+    });
+
+    // Easter egg
+    let clicks = 0;
+    const egg = document.getElementById('egg');
+    const colors = ['#c9a87c', '#ff6b6b', '#4ecdc4', '#ffe66d', '#95e1d3'];
+    egg.addEventListener('click', () => {
+      clicks++;
+      document.documentElement.style.setProperty('--accent', colors[clicks % colors.length]);
+    });
+  </script>
+</body>
+</html>
