@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "new-post": "node scripts/new-post.js",
+    "publish": "node scripts/publish.js"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
