@@ -5,12 +5,19 @@ pubDate: 2014-04-04
 category: general
 lang: en
 ---
+
 "You'll realise later". I grew up hearing these words. In fact almost everyone grew hearing this. Not studying? You'll realise later. Not exercising? You'll realise later. Not taking bath daily? You'll realise later. Spending too much? You'll realise later. And the 'later' that everyone was talking about finally did come in my life only to make me realise that it was too late.
+
 It was during my 7th std. I was almost a 4-year experienced karate champ. I was in the middle of a fight in Nehru stadium. It was 9 pm and almost everyone left the stadium except a few organisers and people who were cheering the two fighters. I was a fat little afraid-to-fight boy fighting one those trash talkers cheered by even more trash talkers. People around me were trying to boost up the little bit of confidence that I had on myself by shouting all kinds of motivating stuff. I was hearing mixed cheers of trash and motivation. And then out of the blue I took a huge blow to my head. I was out. Totally out. It was one of those sports movie climax kind of scene where everyone was expecting me to come back with a bang and knock my opponent out with a single punch. But I didn't. I was too afraid. I quit from that tournament and returned home. I saw the face of my trainers. They were painted with 'I cant believe I trained this loser' expression.
+
 It was then I realised that miracles don't happen in real life. Even if it does, it doesn't happen all of a sudden. Even if it does, it doesn't happen without much hard-work from self. Life is not fantasy movie where you all of a sudden find a long lost father who has saved millions of money for you to just to spend lavishly. You won't find any 'spiritual soul' who gives you life changing advice which changes you to a new human being the next day. Life is real.
+
 I didn't know I could write until a few years back in my life I (I still can't but that's a different story). I didn't even know if I could put together a few words in a language other than my mother tongue and make up a meaningful sentence. But here I am. Writing multi-page blog posts. This didn't happen over night. It was a long process A never-ending process. I don't write because I like to. I actually have no reason to write. But I still do it. Just because I can and I have started to do it.
+
 I was expected to become a state-rank holder in my higher secondary examinations. Did I want to become one? Yes. Who doesn't? But did I do what it takes a become one? No. Not even close. We keep waiting for all the things to happen in life and we forget that we are wasting all the time wishing for things than doing stuff that might actually make those things actually possible.
+
 We don't just waste time wishing for things. We also keep complaining about what we have now. With just a little effort, we can make things happen in life that we might have not even imagined a few years back but we don't. We are too busy analysing, complaining, feeling jealous, talking shit, giving useless advice, listening to useless advice, trying to impress people who don't even matter, doing stuff for people who don't give a shit. It took me a long time to realise these things. When I actually started to take the first step to climb the Mt. Everest, people were hoisting their flags at the peak. I didn't know if I was supposed to feel motivated or devastated by seeing them.
+
 Maybe some sage did give me some life-changing advice early in my life but I didn't pay attention as I was too busy begging my classmate to draw pictures for me in my record. Maybe I did have a distant relative's money but I spent everything buying uncle chips and playing play-station after my school hours. Maybe I did have a song where I was supposed to become a multi-billionaire many years back but I was too busy feeling jealous about the guy who scored a mark more than me in my mid-terms.
+
 I did realise everything in my life 'later'. But I wish this 'later' came a little sooner in my life. It was too late to do anything about it when it finally came. Or is it?
----

@@ -5,19 +5,33 @@ pubDate: 2013-12-22
 category: nostalgia
 lang: en
 ---
+
 Everybody grows up. He/She/It, every single specimen that is capable of possessing life in this planet grows up. Some take time, some do it very quickly. And every single one has a different process. Every once in a while we think ourselves as grown-ups and the next second we realise that we aren't really. So what exactly does growing up mean?
+
 Growing up means realising that age really doesn't matter and the more you grow, the more cynical you become. And cynicism isn't really something to be proud of. It means realising that some things need appreciation. Caring about some things that we didn't even realise existed till now. Not caring about some things that we thought was the world to us till now.
+
 Growing up means knowing that adjusting is not fun anymore. It means even though you have been taught that to adjust with anything and everyone, sometimes it is to okay to pretend to not adjust for some time. It is okay to pretend to be selfish for the sake of having fun. When your 6 year old niece asks you give her toy back, our grown-up sense might tell you to give it back immediately. But what's the fun in that?
+
 It means realising that some fights are just not worth it. Your time is worth more than your pride. Breaking rules isn't really heroic anymore. It only makes you more of an asshole. You used to do things to build yourself up amongst your circles, but now you realise that no one really cares. When it comes to giving a shit about their lives and giving a shit about you, everybody will obviously choose the former.
+
 Once you realise no one gives a shit about you, you also stop giving a shit about anything. You start to realise that comparing yourself with over-achieving or under-achieving people isn't really going to help you anymore. Comparing itself isn't going to do any good. You actually start living your life in your way by listening to your own advice.
+
 You start to realise that, no matter who they are or how much they've achieved, everybody pretends to be a veteran in every single field in this universe and everybody has an opinion on everything. You will never run out of people giving advices. Growing up means realising that these aren't really advices but the things they wanted to do in their lives and it is okay to give a shit about them. It is okay to listen to them even though you aren't really going to follow them in your life just to make them feel happy. To make them feel that they've made a difference in someone's life.
+
 Growing up means losing some friends. It means knowing that judging is only for strangers and if it is done among friends who have been together for quite a long time, it isn't really judging. And if at all you think that someone judges you, it is okay to accept that because they probably might be right. It is okay to adjust with some people and not adjust with some. It means realising that if your conversation with some still starts with a formal 'hi' or 'hello', you don't really need those kind of friendships. Growing up means having judgemental people around you so that you can judge everyone without being judged.
+
 It means realising that it is not really about asking questions anymore. We start to realise that no one is really going to provide with answers right at our doorsteps. Even though we search for them, we will never know that we will get the right answers. Even if you get the right answers, they might not be the ones that you expected. Growing up means knowing that life is too short to ask questions and search for answers.
+
 Some of your opinions are better kept to yourself. You aren't going to like it when people don't agree with your opinions. This doesn't mean you are always right but finding out that you are wrong isn't really going to help. And when people tell their opinions, even though they seem stupid to you, you don't really need to prove them wrong. Again, not worth your time.
+
 Growing up means learning to live alone. Even in a crowd. You don't really have to be an active participant in every single conversation that is happening around you. It means learning to listen more and talk less. And if your voice is not heard, maybe that stage doesn't really deserve your voice.
+
 It means taking up responsibilities. With great growing up comes great responsibilities.
+
 Your jokes need not be funny always even though everyone around you laughs. Especially when it is directed at someone in particular. It is not okay to have fun at someone's expense.
+
 Growing up means even though the road is empty and without any curves, you drive slow respecting your co-passenger's fear. You don't really want to see someone sit silently in fear watching you swift through the traffic. It means making people enjoy the ride.
+
 Growing up means realising how much of an asshole you have been till the last minute in your life and trying to change yourself hereafter rather than feeling for all the lives you have ruined till now. It means not minding about all the childish things you have done till date and about how you won't be able to do those things hereafter as you've 'grown-up'.
+
 Growing up means not allowing others tell you what growing up means and having you own definition. It means creating your own path in a beach which is filled with footsteps of grown-ups. Even though some of your steps overlap, beyond a point, the beach is empty and it is in your hands to choose your path.
----

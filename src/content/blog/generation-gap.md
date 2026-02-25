@@ -5,12 +5,19 @@ pubDate: 2014-08-29
 category: general
 lang: en
 ---
+
 > "The children now love luxury; they have bad manners, contempt for authority; they show disrespect for elders and love chatter in place of exercise. Children are now tyrants, not the servants of their households. They no longer rise when elders enter the room. They contradict their parents, chatter before company, gobble up dainties at the table, cross their legs, and tyrannize their teachers"
+
 Nope. This was not told by Rumi or some pseudo-intellectual last month in some stupid debate show in TV. It was told around 500 BC by some greek philosopher commonly misattributed to Socrates. Children are supposed to disregard what their predecessor generation do and elders are supposed to hate what their next generation do. This has been happening since forever. And fortunately or unfortunately, we have been following this till now. Except one particular generation. The so called Baby Boomers generation.
+
 Children these days just can't tolerate the fact that older people are not updated with stuff. They mock them for not being able find the delete option in their smart phone. They ridicule them when they don't use shortcuts in their computer. They want them to be updated with fashion, with technology, with news, with jokes, with everything. Young people want older people to learn in just a matter of few months, what they learned in so many years. They laugh at them for following traditions.
+
 And old people too play their roles perfectly. They totally contempt anything that is new even though they use them so much. They blame the laziness of youth on the advancement of technology without considering the fact that it is the same technology with which they do all the stuff within minutes, which used to take them days. It is using the same technology which helped save so many lives. They want to be updated with stuff but they don't do it to maintain the old school coolness.
+
 But there is one particular set of people, the most experienced people in life, who always stand odd. Especially in this era. I recently had the pleasure of spending a few days with those. "I was fascinated" is an understatement. These people were talking about friends and two & a half men. Fiddling with various apps in their smartphones without asking any help from the children which they are supposed to. Wanting to learn new things even though they never know if they will ever get used to it. Realising the beauty of advanced age and not disregarding it. All I could think of is 'Will I even be capable of doing such things when I am that old? Will I even survive those many years?'
+
 We can't even accept the fact that people younger than us like different music than us. We are disgusted by the fact that they read chetan bhagat. We are not even giving them a chance to make them realise what they are doing is wrong. Not realising that they will grow out of it and start hating what people younger than them do.
+
 Will we even consider recognising new stuff when we become older. Will we use them for our advantage or refuse to acknowledge them just because they are being used by people younger than us? Very many years later, when we are lying in a bed with a catheter, when our grandchildren demonstrate their new innovation, projecting through a holographic watch, 3D printed by them, will we be enchanted by that or feel sad for them for not being old school?
+
 > "I used to be with it, but then they changed what "it" was. Now, what I'm with isn't it, and what's "it" seems weird and scary to me." -- Abe Simpson
----
