@@ -30,3 +30,12 @@ All of us seem to believe that only our childhoods were lived the right way, and
 I don't know if I'll ever get out of this loop of romanticising nostalgia. And after realising how human it is, I don't even know if I should try. But one thing I consciously try to do now is not judge people who are just trying to find their comfort zone. People who don't live the way I live my life.
 
 A rule I wish I had set for myself when I was a kid. It would have been easier to follow now.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

@@ -31,3 +31,12 @@ Some geniuses may ask "Can't we just skip the interview instead of taking this h
 So you have successfully graduated without getting placed. Now is the hard part. You will be bombarded with questions from every single soul you meet. You will be seen as a threat to the society. You will be branded as _Danda soru._ You will lose all the respect that you had even from your parents. Now is the time to say the one thing that might save you from all the embarrassment.
 
 _I'm following my dreams da._
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

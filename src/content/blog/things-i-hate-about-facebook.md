@@ -29,3 +29,12 @@ Everybody hates many things in Facebook. Here are some of those can-be-avoided t
 10. **The last and the thing that i hate the most** -- There are many more good things in Facebook that overtakes these things and makes me come again and again to this site. This blocks me from writing my assignments, reading for the exams, writing my records, and many more things that actually requires moving from my place than just sitting in front of my laptop 24*7.
 
 > "Do you want to make money from Facebook? 1.Go to account settings, 2.Deactivate your account, 3.Start living in the real world!"
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

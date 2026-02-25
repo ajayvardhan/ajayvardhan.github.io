@@ -29,3 +29,12 @@ Not sure if I'm just getting old, but I've developed a strong feeling that birth
 What exactly is birthday about? Wishing? Exchanging gifts? Wearing new dress? Hating someone for not wishing? I still haven't figured it out. But I'm still waiting for that overrated celebrations that they show in movies and I hope that it is not somewhere in the near future as I have to just stand there awkwardly with people gathered around me.
 
 P.S. I don't really care if I get a party or not for my future birthdays. And I apologise if someone got offended by this.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

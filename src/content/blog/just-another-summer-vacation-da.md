@@ -25,3 +25,12 @@ Last day of my vacation. I think of how constructively I have spent these 40 day
 Another vacation gone. Nothing improved in my life. So what am I gonna do after my college? Work? Higher studies? IAS? Cat? Gate? For all these questions, the only answer that i can give is
 
 _"Innum 1 year irukku da. Pathukkalam."_
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

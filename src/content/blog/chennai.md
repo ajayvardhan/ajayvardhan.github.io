@@ -24,3 +24,12 @@ Movie tickets cost seven rupees then; my parents hesitated buying snacks. As inf
 Two years have passed since I could access this world freely. Though my current location offers material advantages, it cannot replicate the specific joy of obtaining bajjis at the beach or eating pani puri after navigating Sholinganallur signal.
 
 On this anniversary of my departure -- coincidentally Chennai's birthday -- I acknowledge how profoundly this city shaped me. To everyone missing Chennai today: may you soon shed joyful tears returning home.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

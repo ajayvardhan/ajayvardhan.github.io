@@ -35,3 +35,12 @@ Growing up means even though the road is empty and without any curves, you drive
 Growing up means realising how much of an asshole you have been till the last minute in your life and trying to change yourself hereafter rather than feeling for all the lives you have ruined till now. It means not minding about all the childish things you have done till date and about how you won't be able to do those things hereafter as you've 'grown-up'.
 
 Growing up means not allowing others tell you what growing up means and having you own definition. It means creating your own path in a beach which is filled with footsteps of grown-ups. Even though some of your steps overlap, beyond a point, the beach is empty and it is in your hands to choose your path.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

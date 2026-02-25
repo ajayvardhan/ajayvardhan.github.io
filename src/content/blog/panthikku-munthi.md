@@ -26,3 +26,12 @@ If they didn't serve *rasam* next, I decided to walk out of the place like Simbu
 Then came in the *payasam* or some combination of akka, rava, vada and cell. (*Akkaravadisal* word play. Nice? No? Okay). After completely licking it out of the leaf (Seriously. Even dogs wouldn't stand a chance with us when it comes to licking the *payasam* out of a banana leaf) , the rest of the meal was successfully finished without any severe damages. But the worst wasn't over yet. I was the first one to finish the meal, everyone else were still very keen on licking their *payasam*. Oldest-Person-gets-up-first rule came into effect. But the problem is except my dad and me, everyone else seemed to be the oldest of the group. Then I was just licking the left over *pachadis* when someone who seemed to be the oldest of the group got up. I didn't miss the chance. Just when I was almost up, my dad gave me the look which I think is the look that asked me to pick up the leaf. Then came the next voice which gave me godly pleasure. "*Elaya yaarum edukka venam. Naanga eduthukkarom*". I flew away from the room which was filled with conversations which starting from the Delhi gang-rape and went till Chola Dynasty.
 
 This post has been just about a normal meal that I had a few days ago. With people *konthaliching* over many sad and disgusting incidents happening all over the country, why the hell did you decide to write this? You may ask. But then it should have struck your mind just by reading the title. I even warned you somewhere in the middle. If you still have made it to the end of the post, blame yourself. And Thank you.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

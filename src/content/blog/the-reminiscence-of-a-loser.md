@@ -21,3 +21,12 @@ We don't just waste time wishing for things. We also keep complaining about what
 Maybe some sage did give me some life-changing advice early in my life but I didn't pay attention as I was too busy begging my classmate to draw pictures for me in my record. Maybe I did have a distant relative's money but I spent everything buying uncle chips and playing play-station after my school hours. Maybe I did have a song where I was supposed to become a multi-billionaire many years back but I was too busy feeling jealous about the guy who scored a mark more than me in my mid-terms.
 
 I did realise everything in my life 'later'. But I wish this 'later' came a little sooner in my life. It was too late to do anything about it when it finally came. Or is it?
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

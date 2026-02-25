@@ -15,3 +15,12 @@ As an average cynic, I had made peace with the fact that nobody cares for anyone
 My mind did not have an emotion for this. I could say I was in loss of words but I don't think the words I could utter at that point of time were part of my vocabulary. All that my face could do was creepily smile and hope that people don't get offended. My mind was filled with so many questions. What did I do to deserve all this? Why was I so blinded by the nonsensical concept of indifference? Why am I running away from all this kindness?
 
 Every part of my body that contributes to the emotion of crying were working vigorously except my eyes. I waved everyone goodbye by making myself believe that it would take a really long time to see them in person again. I waved goodbye to the little droplets of tears in the edge of some people's eyes. I waved goodbye to people whom I love and care the most in my life. I waved goodbye to the greatest city in the world. I waved goodbye as I walked pass the wall as I took one final glimpse of the smile in those faces. I waved goodbye. And then I cried.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

@@ -50,3 +50,12 @@ Leaving a trail wherever it went
 Always looking forward to ascent
 The droplet finally reached the tip of the leaf
 Ready to take the leap of faith, with a tiny ray of belief
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

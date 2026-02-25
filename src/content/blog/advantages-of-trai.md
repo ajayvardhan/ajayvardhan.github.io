@@ -19,3 +19,12 @@ Now that everyone can send only 100 messages per day, ppl send messages only if 
 ## Committed friends
 
 When you are single, no one can irritate you more than committed friends of yours. They will be texting 24*7 that after some time you will feel different if you see them without a mobile. I cant imagine how long will they be exchanging love to each other. _ethukku da intha manam ketta polappu?_ Many ppl may ask "_unakku yen vayaru eriyuthu?_". You may call this feeling as anything but can i cant bear someone who is texting his girlfriend for each and every activity he is doing all the time. Me being single also maybe the reason for this feeling, but still there must be some limits and that is where TRAI plays the role. Now since only 100 messages per day, they rarely text and most of the time call each other. And when they call they go to some no-man's land where one can't even find the sight of a human being anywhere in a surrounding of 100 mts.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

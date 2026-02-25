@@ -29,3 +29,12 @@ Happy Birthday Appa :)
 Hope the grown up me is less disappointing than the child me.
 
 (PS: Ma, I'll write a separate one for your birthday, don't worry :P)
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

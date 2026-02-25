@@ -21,3 +21,12 @@ Although finding a middle ground between the two extreme sides of everything doe
 Morality is another intesresting concept. I find it to be subjective but it is often defined as objective. What I find as morally correct may not be for another person. But we still keep walking up the moral high ground every single time we get a chance. An argument can never be constructive if any of them takes the morally right route. How can a subjective opinion used to prove someone else wrong?
 
 Opinions. Changing opinions. Misinformed opinions. No opinions. Hypocrisy. Morality. Caring. Not caring. Coolness. All these problems rise due to one big problem. Judgemental people. If only there weren't any in this world. If only.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

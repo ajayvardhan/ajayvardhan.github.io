@@ -45,3 +45,12 @@ He didn't fight.
 He switched.
 
 To Windows.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

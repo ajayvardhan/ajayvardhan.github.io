@@ -33,3 +33,12 @@ Why am I feeling bad about not knowing something that might not even exist? Why 
 *I'm never reading anything you write hereafter.*
 
 *Okay maybe this calvin strip might cheer you up.*
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

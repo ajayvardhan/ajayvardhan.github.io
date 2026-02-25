@@ -21,3 +21,12 @@ We can't even accept the fact that people younger than us like different music t
 Will we even consider recognising new stuff when we become older. Will we use them for our advantage or refuse to acknowledge them just because they are being used by people younger than us? Very many years later, when we are lying in a bed with a catheter, when our grandchildren demonstrate their new innovation, projecting through a holographic watch, 3D printed by them, will we be enchanted by that or feel sad for them for not being old school?
 
 > "I used to be with it, but then they changed what "it" was. Now, what I'm with isn't it, and what's "it" seems weird and scary to me." -- Abe Simpson
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

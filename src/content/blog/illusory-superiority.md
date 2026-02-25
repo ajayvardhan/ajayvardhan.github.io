@@ -19,3 +19,12 @@ Why do we have multiple faces? Why manipulate our words based on the people whom
 Why do we have the constant pointless pursuit towards the meaning of everything? Why do we have to figure out everything so soon? Why do we have to ask so many questions? Why can't we live a simple life without complicating stuff? Why do we have to think so much and ruin everything?
 
 What is wrong with us?
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

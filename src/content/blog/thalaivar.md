@@ -23,3 +23,12 @@ Recently he had some health issues due to which he was sent to Singapore for tre
 Though there are many jokes and criticisms on rajinikanth, when we are faced with the question _"nee yaaru fan?"_, the first name comes out will be rajinikanth. We have loved you, loving you and will love you as long as we are alive. On this day, 12th december, we are proud to wish a very very very very very happy birthday and a many more years of the same fame and power.
 
 -dedicated to thalaivar(cant find a better word).
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

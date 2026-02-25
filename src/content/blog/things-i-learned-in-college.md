@@ -21,3 +21,12 @@ Growing up, I never once told my mother that her cooking was good. Not because i
 I have this habit of making witty comments and _kalaichifying_ people. Some people take it sportingly. Some people counter back even better. But some people don't say anything at the time, and they go home and think about it. They hold it against you. They start distancing themselves from you. And before you know it, you've lost a friend without even realizing why. College taught me that not everyone has the same temperament. Before you crack a joke at someone's expense, make sure you know how they'll take it. Because losing a friend over a joke is never worth it.
 
 TBC..
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

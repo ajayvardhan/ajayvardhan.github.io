@@ -28,3 +28,12 @@ As he has held long trying not to quit
 
 The waves came close and the voices became stronger
 He walked towards the sound that he thought might last longer
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

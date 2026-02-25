@@ -15,3 +15,12 @@ The need to have insider jokes and common memories to make friendships non-awkwa
 I know this mild feeling of borderline personality is prevalent with many people of my age. I've spoken about this with some but all seem to be as clueless as I am. There is no reason for this feeling but we have it. Even when people care about me, the feeling of nobody cares keeps crawling back and occupying all over my body and pulls me back from doing anything a normal person with normal friends would do. Does all this boil down to our need for acceptance or need to find solace in self? I have no idea.
 
 I've read a lot of things that people wrote about how it is difficult to make friends as we grow up. Many give reasons and scientific facts but very few talk about solutions. Maybe it is because we all know the solution already but just aren't ready to follow it because the problem itself is stopping us from it. Figuring out life never leads to fruitful results. As the cliche goes, I'll blame this also on me becoming a grown-up. Or have I?
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

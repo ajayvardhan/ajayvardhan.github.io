@@ -29,3 +29,12 @@ Then came the D-day. I woke up early that day to get ready for my performance at
 I had practiced around five tunes, of which four were cine songs and one was a tune that I had mastered during my school days. To my best knowledge, I played well. I didn't get that much of an applause as I had expected or at least as the other participants got. If I were the judge, I would at least have given myself the second place because the miruthangam player was terrific. I lost eventually because of a poor judge, fit-for-nothing audience and the two other carnatic instrument participants. They deserved to win it. I don't want to blame my performance for my loss.
 
 After that competition, I thought I'll never play trumpet again. Till now, I haven't played it. But I don't think that was end of it. I will be playing it as long I have the energy in my body even when others think I suck at that. And if there ever was any competition like this in my future, I will participate in it no matter I win or I lose. After all, life is about participation and not winning!
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```

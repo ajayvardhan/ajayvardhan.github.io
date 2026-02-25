@@ -32,3 +32,12 @@ So, the next time someone asks this question to you, your answer can be
 Chennai is just another place in tamil nadu and not a place which manufactures lovers.
 
 P.S. I am not writing this out of frustration, just it is kind of funny when ppl think like this.
+
+---
+
+```button
+name 🚀 Publish
+type template
+action Publish
+color purple
+```
