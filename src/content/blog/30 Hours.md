@@ -11,7 +11,7 @@ I have 30 hours worth of things I want to do every day. I have 24 hours. I am no
 
 I have been on a health and fitness journey for almost a year now. Trying to eat healthy, going to the gym every day, walking post dinner, planning out my meals, protein, carbs etc on a daily basis itself seems like a full time job in addition to my other actual full time job. With this interest, I'm also trying to consume a lot of content around this - watching krish ashok's videos, reading everyone's fitness journeys in r/fitness, brainstorming with chatgpt on how to make this process easier for me etc.
 
-What facewash to use, moisturise regularly, niacinamide and retinol routines, clay mask weekends, anti dandruff shampoos, conditioning it regularly, pre and post helmet wear care — another significant portion of the day goes away taking care of this.
+What facewash to use, moisturise regularly, niacinamide and retinol routines, clay mask weekends, anti dandruff shampoos, conditioning it regularly, pre and post helmet wear care. Another significant portion of the day goes away taking care of this.
 
 With the same narcissistic obsession, I'm giving therapy a lot of importance lately. Questioning every thought that comes to my mind, constantly evaluating how I'm treating myself and others, rediscovering my relationships with my parents, friends, wife and everyone around me, journaling my thoughts, talking to myself in the mirror, trying to discover who actually am I instead of being what I'm supposed to be. Consciously maintaining friendships across different timezones, not letting my judgemental mind create prejudices about anyone while trying to maintain healthy boundaries is a lot harder than what I thought it would be.
 
