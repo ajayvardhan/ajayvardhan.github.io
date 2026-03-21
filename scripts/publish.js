@@ -17,11 +17,22 @@ if (activeFile && fs.existsSync(activeFile)) {
   }
 }
 
-const files = fs.readdirSync(OBSIDIAN_BLOG_DIR).filter(f => f.endsWith('.md'));
-for (const file of files) {
+const obsidianFiles = fs.readdirSync(OBSIDIAN_BLOG_DIR).filter(f => f.endsWith('.md'));
+const publishedFiles = fs.readdirSync(BLOG_SRC_DIR).filter(f => f.endsWith('.md'));
+
+// Delete files that were removed/renamed in Obsidian
+for (const file of publishedFiles) {
+  if (!obsidianFiles.includes(file)) {
+    fs.unlinkSync(path.join(BLOG_SRC_DIR, file));
+    console.log(`Removed: ${file}`);
+  }
+}
+
+// Copy/update files from Obsidian
+for (const file of obsidianFiles) {
   fs.copyFileSync(path.join(OBSIDIAN_BLOG_DIR, file), path.join(BLOG_SRC_DIR, file));
 }
-console.log(`Synced ${files.length} post(s) from Obsidian → src/content/blog/`);
+console.log(`Synced ${obsidianFiles.length} post(s) from Obsidian → src/content/blog/`);
 
 const status = execSync('git status --porcelain src/content/blog/').toString().trim();
 if (!status) {
